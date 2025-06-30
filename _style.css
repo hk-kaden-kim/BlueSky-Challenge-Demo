@@ -1,0 +1,110 @@
+/* Center everything and add a soft background */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  padding: 40px;
+  background: #f0f0f0;
+}
+
+/* Decorated slider container, larger and centered */
+.slider-container {
+  position: relative;
+  width: 80vw;
+  max-width: 900px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --clip-right: 50%; /* initial half/half */
+}
+
+/* Base image defines container size and fills width */
+.before-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+/* Overlay image clipped by custom property */
+.after-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  clip-path: inset(0 var(--clip-right) 0 0);
+  user-select: none;
+}
+
+/* Slider track and thumb styling */
+.slider {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  z-index: 2;
+}
+
+/* Track */
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: transparent;
+  border-radius: 3px;
+}
+.slider::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+}
+
+/* Thumb */
+.slider::-webkit-slider-thumb,
+.slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  margin-top: -8px; /* center thumb on track */
+}
+
+/* New wrapper for vertical layout */
+.sliders-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+/* Optional: remove vertical centering from body */
+/* body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background: #f0f0f0;
+  font-family: Arial, sans-serif;
+} */
