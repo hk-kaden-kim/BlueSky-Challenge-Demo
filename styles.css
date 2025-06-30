@@ -27,8 +27,9 @@ h1 {
 }
 
 .slider img {
-    width: 100%;
-    display: block;
+    width: 100%; 
+    height: auto; /* Adjust based on your layout needs */
+    object-fit: cover; /* Ensures images fill the container */
 }
 
 .before {
