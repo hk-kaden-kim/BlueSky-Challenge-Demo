@@ -24,7 +24,7 @@ body {
 .slider-container {
   position: relative;
   width: 80vw;
-  max-width: 900px;
+  max-width: 300px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -88,23 +88,39 @@ body {
   border: 2px solid #ccc;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  margin-top: -8px; /* center thumb on track */
+  margin-top: -8px;
 }
 
-/* New wrapper for vertical layout */
-.sliders-wrapper {
+.page-header {
+  background-color: #dcdcdc; /* light grey */
+  text-align: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 12px 12px 0 0;
+  max-width: 80vw;
+  margin: 0 auto 40px auto;
+  
+  /* Make height about 20% of viewport height */
+  height: 100vh; 
+  
+  /* Optional: vertically center content inside the header */
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding: 40px 0;
+  justify-content: center;
 }
 
-/* Optional: remove vertical centering from body */
-/* body {
+.page-header h1 {
+  font-size: 2.5rem; /* large font */
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.page-header .description {
+  font-size: 1rem; /* smaller font */
+  color: #555;
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  background: #f0f0f0;
-  font-family: Arial, sans-serif;
-} */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
